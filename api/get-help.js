@@ -7,7 +7,7 @@ const { GoogleGenerativeAI } = require('@google/generative-ai');
 // Vercel 會自動從您網站的「環境變數」設定中讀取 GEMINI_API_KEY
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const model = genAI.getGenerativeModel({
-  model: "gemini-pro",
+  model: "gemini-1.5-flash",
   generationConfig: {
     responseMimeType: "application/json" // 強制 Gemini 回傳 JSON
   }
@@ -75,4 +75,5 @@ export default async function handler(req, res) {
   }
 
 }
+
 
